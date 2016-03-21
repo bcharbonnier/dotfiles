@@ -1,0 +1,57 @@
+execute pahtogen#infect()
+
+ Make Vim more usefull
+set nocompatible
+
+" Allow backspace in insert mode
+set backspace=indent,eol,start
+
+" Show "invisible" characters
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set list
+
+" Some colors
+colorscheme molokai
+let g:molokai_original=1
+syntax enable
+
+" Highlight searches
+set hlsearch
+
+" Don't reset cursor to start of line when moving around
+set nostartofline
+
+" Encoding
+set encoding=utf-8
+
+" Wrap git commit file types at the appropriate length
+filetype indent plugin on
+
+" Enable line numbers
+set number
+
+" Highlight current line
+set cursorline
+
+" Make tabs as wide as 2 spaces
+set tabstop=2
+" set softtabstop=2
+" set expandtab
+
+" Show cursor current position
+set ruler
+
+set linebreak
+
+
+" Strip trailing whitespace (,ss)
+function! StripWhitesapce()
+				let save_cursor = getpos(".")
+				let old_query = getreg('/')
+				:%s/\s\+$//e
+				call setpos('.', save_cursor)
+				call setreg('/', old_query)
+endfunction
+noremap <leader>ss :call StripWhiteSpace()<CR>
+
+

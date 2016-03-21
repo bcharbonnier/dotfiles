@@ -1,0 +1,40 @@
+# Local/private config goes in the include
+[include]
+	path = ~/.gitconfig.local
+
+[alias]
+	logs = log --pretty=online --abbrev-commit
+	glogs = !git logs --graph
+	ec = config --global -e
+	ecl = config --local -e
+	master = checkout master
+	puush = push -f
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	cob = checkout -b
+	cm = !git add -A && git commit -m "$@"
+	wipe = !git add -A && git commit -qm "WIPE SAVEPOINT" && git reset HEAD~1 --hard
+	undo = reset HEAD~1 --mixed
+	amend = commit --amend -C HEAD
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	nuke = !git branch -D $1 && git push origin :$1
+
+[color]
+	diff = auto
+  status = auto
+  branch = auto
+  ui = true
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+
+[help]
+	# automatically correct and execute mistyped command
+	autocorrect = 1
