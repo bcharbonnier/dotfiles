@@ -61,4 +61,5 @@ function! StripWhitesapce()
 endfunction
 noremap <leader>ss :call StripWhiteSpace()<CR>
 
-
+" Activating vim-airline
+set laststatus=2
