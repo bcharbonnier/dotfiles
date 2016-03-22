@@ -15,6 +15,13 @@ colorscheme molokai
 let g:molokai_original=1
 syntax enable
 
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
+
 " Highlight searches
 set hlsearch
 
