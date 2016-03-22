@@ -2,7 +2,7 @@
 
 export DOTFILES=$HOME/.dotfiles
 
-echo "› Updating dotfiles installation"
+echo "› Updating dotfiles installation."
 
 # Set OS X defaults
 $DOTFILES/osx/set-defaults.sh
@@ -11,7 +11,7 @@ $DOTFILES/osx/set-defaults.sh
 $DOTFILES/homebrew/install.sh 2>&1
 
 # Upgrade homebrew
-echo "› brew update"
+echo "› brew update."
 brew update
 
 # Install software
