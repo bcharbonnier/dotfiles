@@ -9,17 +9,16 @@ then
   source ~/.local_profile
 fi
 
-local config_files=($DOTFILE/**/*.bash)
-
 # load the path files
-for file in ${(M)config_files:#*/path.bash}
+for file in $(find -H "$DOTFILES" -maxdepth 2 -name 'path.bash')
 do
 	source $file
 done
+
+echo
 
 # load everything but path files
-for file in ${config_files:#*/path.bash}
+for file in ${find -H "$DOTFILES" -maxdepth 2 -name '*.bash' -not -name 'path.bash'}
 do
 	source $file
 done
-
