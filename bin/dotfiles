@@ -15,5 +15,5 @@ echo "› brew update."
 brew update
 
 # Install software
-echo "› $DOTFILES/script/update"
-$DOTFILES/script/update
+echo "› $DOTFILES/scripts/update"
+$DOTFILES/scripts/update
