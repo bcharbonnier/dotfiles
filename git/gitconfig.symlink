@@ -3,7 +3,7 @@
 	path = ~/.gitconfig.local
 
 [alias]
-	logs = log --pretty=online --abbrev-commit
+	logs = log --pretty=oneline --abbrev-commit
 	glogs = !git logs --graph
 	ec = config --global -e
 	ecl = config --local -e

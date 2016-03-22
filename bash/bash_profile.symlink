@@ -22,7 +22,7 @@ do
 done
 
 # load everything but path & env files
-for file in ${find -H "$DOTFILES" -maxdepth 2 -name '*.bash' -not -name 'path.bash' -not -name 'env.bash'}
+for file in $(find -H "$DOTFILES" -maxdepth 2 -name '*.bash' -not -name 'path.bash' -not -name 'env.bash')
 do
 	source $file
 done

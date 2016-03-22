@@ -1,6 +1,6 @@
-execute pahtogen#infect()
+execute pathogen#infect()
 
- Make Vim more usefull
+" Make Vim more usefull
 set nocompatible
 
 " Allow backspace in insert mode
