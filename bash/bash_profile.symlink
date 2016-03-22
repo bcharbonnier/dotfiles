@@ -15,10 +15,14 @@ do
 	source $file
 done
 
-echo
+# load the env files
+for file in $(find -H "$DOTFILES" -maxdepth 2 -name 'env.bash')
+do
+	source $file
+done
 
-# load everything but path files
-for file in ${find -H "$DOTFILES" -maxdepth 2 -name '*.bash' -not -name 'path.bash'}
+# load everything but path & env files
+for file in ${find -H "$DOTFILES" -maxdepth 2 -name '*.bash' -not -name 'path.bash' -not -name 'env.bash'}
 do
 	source $file
 done
