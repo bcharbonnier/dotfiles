@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")/.."
+DOTFILES_ROOT=$(pwd -P)
+
+info () {
+	printf "\r \033[00;34m==>\033[0m $1\n"
+}
+
+uninstall_dotfiles () {
+  info "Uninstalling dotfiles"
+
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+
+		if [ -e "$dst.backup" ]
+		then
+			mv "$dst.backup" "$dst"
+			info "Restored $dst.backup to $dst"
+		fi
+}
