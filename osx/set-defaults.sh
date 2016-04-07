@@ -66,12 +66,15 @@ defaults write com.apple.dock showhidden -bool true
 
 # Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
-
+defaults write com.apple.SafariTechnologyPreview ShowFullURLInSmartSearchField -bool true
 # Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.SafariTechnologyPreview IncludeInternalDebugMenu -bool true
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.SafariTechnologyPreview IncludeDevelopMenu -bool true
+
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
