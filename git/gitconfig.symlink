@@ -39,3 +39,11 @@
 [help]
 	# automatically correct and execute mistyped command
 	autocorrect = 1
+
+[url "https://"]
+	insteadOf = git://
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
