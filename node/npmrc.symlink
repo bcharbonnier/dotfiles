@@ -1,0 +1,3 @@
+ariatemplates:port=9090
+ariatemplates:phantomjsInstances=2
+save-exact=true
