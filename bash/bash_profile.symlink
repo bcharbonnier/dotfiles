@@ -26,3 +26,8 @@ for file in $(find -H "$DOTFILES" -maxdepth 2 -name '*.bash' -not -name 'path.ba
 do
 	source $file
 done
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
