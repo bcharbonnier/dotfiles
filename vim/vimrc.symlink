@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-" Make Vim more usefull
+" Make Vim more useful
 set nocompatible
 
 " Allow backspace in insert mode
@@ -21,6 +21,9 @@ set directory=~/.vim/swaps
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
+
+" font size
+set guifont=Operator\ Mono\ Book:h19
 
 " Highlight searches
 set hlsearch
@@ -63,3 +66,5 @@ noremap <leader>ss :call StripWhiteSpace()<CR>
 
 " Activating vim-airline
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
