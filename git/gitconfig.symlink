@@ -6,7 +6,7 @@
 	all = add -A
 	logs = log --pretty=oneline --abbrev-commit
 	glogs = !git logs --graph
-  glog = !git slogs --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	glog = !git slogs --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 	ec = config --global -e
 	ecl = config --local -e
 	master = checkout master
@@ -21,28 +21,37 @@
 	branches = branch -a
 	remotes = remote -v
 	nuke = !git branch -D $1 && git push origin :$1
-  pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-  pr-clean = "!git checkout master; git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-  b-pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
+	pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git checkout master; git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+	b-pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
 
 [color]
 	diff = auto
-  status = auto
-  branch = auto
-  ui = true
+	status = auto
+	branch = auto
+	ui = true
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[apply]
+	whitespace = nowarn
 
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
 
-[core]
-	excludesfile = ~/.gitignore
-  editor = vim
-
 [help]
 	# automatically correct and execute mistyped command
 	autocorrect = 1
+
+[mergetool]
+    keepBackup = false
+
+[difftool]
+    prompt = false
 
 [url "https://"]
 	insteadOf = git://
@@ -55,4 +64,7 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+
+[credential]
+	helper = osxkeychain
 

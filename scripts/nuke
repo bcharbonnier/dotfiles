@@ -8,11 +8,11 @@ info () {
 }
 
 uninstall_dotfiles () {
-  info "Uninstalling dotfiles"
+	info "Uninstalling dotfiles"
 
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
-  do
-    dst="$HOME/.$(basename "${src%.*}")"
+	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+	do
+    	dst="$HOME/.$(basename "${src%.*}")"
 		rm "$dst"
 		
 		if [ -e "$dst.backup" ]
