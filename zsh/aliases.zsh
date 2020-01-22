@@ -1,3 +1,10 @@
+setopt auto_cd
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
 alias mkdir='mkdir -pv'
 
 # Flush your dns cache

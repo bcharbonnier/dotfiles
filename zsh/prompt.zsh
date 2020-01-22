@@ -1,8 +1,8 @@
-autoload colors && colors
+autoload -U colors && colors
 
 set_prompt () {
   __posh_git_ps1 $'$fg[cyan]%}$USER@%m%{$reset_color%} %~ ' $'\n› '
-  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+  export RPROMPT=""
 }
 
 # http://superuser.com/a/315029/4952
