@@ -1,3 +1,4 @@
 .DS_Store
 vim/vim.symlink/.netrwhist
 git/gitconfig.local.symlink
+Brewfile.lock.json

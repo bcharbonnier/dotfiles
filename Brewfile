@@ -15,7 +15,7 @@ brew 'ruby'
 brew 'rbenv'
 brew 'vim'
 brew 'watchman'
-brew 'yarn' --without-node
+brew 'yarn'
 
 cask 'qlmarkdown'
 cask 'quicklook-json'
